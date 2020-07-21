@@ -2,7 +2,7 @@
   <div id="app">
     <div class="header">
       <a href="#default" class="logo"><img style="width:50px;height:50px;" src="./assets/images/logo_footer.png" class="img_top" alt=""></a>
-      <a>Daily Drinks</a>
+      <a class="title_anchor">Daily Drinks</a>
       <div class="header-right">
         
         <a class="active" href="#home">Home</a>
@@ -59,23 +59,29 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
-  background: #2c3e50;
-  padding-top: 30px;
+  background: #fff;
+  /*padding-top: 30px;*/
 }
 .header {
   overflow: hidden;
   background-color: #fff;
   padding: 20px 10px;
+      width: 1200px;
+    margin: 0 auto;
 }
 .header a {
-  float: left;
-  color: black;
-  text-align: center;
-  padding: 12px;
-  text-decoration: none;
-  font-size: 18px; 
-  line-height: 25px;
-  border-radius: 4px;
+    float: left;
+    color: black;
+    text-align: center;
+    padding: 8px;
+    text-decoration: none;
+    font-size: 16px;
+    line-height: 25px;
+    border-radius: 0px;
+    padding-left: 25px;
+    padding-right: 25px;
+    font-weight: bold;
+    font-family: sans-serif;
 }
 
 .header a.logo {
@@ -87,20 +93,34 @@ body {
 
 
 .header a.active {
-  background-color: dodgerblue;
+  background-color: #661f09;
   color: white;
 }
 
 .header-right {
-  float: right;
+     float: right;
+    margin-right: 35px;
+}
+a.title_anchor {
+    padding-left: 0;
+    font-weight: bold;
+    font-family: sans-serif;
+    font-size: 22px;
+    margin-left: -10px;
 }
 
   
-  .header-right {
-    float: none;
-  }
+  
 #app {
-  max-width: 700px;
+  max-width: 100%;
   margin: 0 auto;
+}
+
+@media(max-width: 767px)
+{
+  .header
+  {
+ width: 100%;
+  }
 }
 </style>
