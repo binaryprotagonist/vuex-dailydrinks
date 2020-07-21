@@ -28,12 +28,22 @@ const actions = {
   },
   
   async deleteProduct({ commit }, name) {
-    alert(name)
     commit("removeProduct", name);
   },
+  
   async addProduct({ commit }, product) {
-    alert(JSON.stringify(product))
-    commit("newProduct", product);
+    
+    if(product.index !==null){
+      
+      state.products[product.index].name=product.name;
+      state.products[product.index].price=product.price;
+      state.products[product.index].description=product.description;
+    }else{
+     
+      commit("newProduct", product);
+    }
+
+   
   }
 
 };
@@ -42,9 +52,7 @@ const mutations = {
   setProducts: (state, products) => (state.products = products),
   newProduct: (state, product) => state.products.unshift(product),
   removeProduct: (state, name)  =>{
-     // alert(index)
-      alert(name)
-      state.products.splice(name, 1);
+     state.products.splice(name, 1);
     }
     
 

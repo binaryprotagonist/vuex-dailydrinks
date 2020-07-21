@@ -10,8 +10,8 @@
         <a href="#about">About</a>
       </div>
     </div>
-    <AddProduct />
-    <Products />
+    <AddProduct :product="formData" :index="currentProduct" />
+    <Products :products="products" @edit="onEdit" />
   </div>
 </template>
 
@@ -24,6 +24,25 @@ export default {
   components: {
     Products,
     AddProduct
+  },
+   data() {
+    return {
+      currentOrder: null,
+        formData: {},
+    }
+  },
+
+  // Data:{
+  //   formData: {},
+  //   currentOrder: null
+  // },
+  methods:{
+     onEdit(index,allProducts) {
+      // alert(allProducts[index])
+      this.formData = allProducts[index];
+      this.currentProduct = index;
+      
+    },
   }
 };
 </script>
